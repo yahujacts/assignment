@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1504611908934
+Build-Jdk: 1.8.0_102
+Built-By: 450851
+Bundle-Description: Bundles for Integration Tests for assignment
+Bundle-ManifestVersion: 2
+Bundle-Name: assignment - Integration Tests Bundles
+Bundle-SymbolicName: Assignment.assignment.it.tests
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Sling-Test-Regexp: .*Test
+Tool: Bnd-2.3.0.201405100607

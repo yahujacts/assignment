@@ -1,0 +1,5 @@
+com\aem\assignment\core\listeners\SimpleResourceListener.class
+com\aem\assignment\core\servlets\SimpleServlet.class
+com\aem\assignment\core\filters\LoggingFilter.class
+com\aem\assignment\core\package-info.class
+com\aem\assignment\core\schedulers\SimpleScheduledTask.class
