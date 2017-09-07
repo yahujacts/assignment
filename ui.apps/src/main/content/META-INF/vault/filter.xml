@@ -3,6 +3,7 @@
     <filter root="/apps/assignment">
         <exclude pattern="/apps/assignment/install" />
     </filter>
+    <filter root="/apps/custom_submit_action"/>
     <filter root="/apps/sling" />
     <filter root="/etc/designs/assignment"/>
 </workspaceFilter>

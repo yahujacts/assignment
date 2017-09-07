@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
     <filter root="/content/Assignment"/>
+    <filter root="/content/forms/af/Form1"/>
     <filter root="/content/dam/Assignment"/>
 </workspaceFilter>

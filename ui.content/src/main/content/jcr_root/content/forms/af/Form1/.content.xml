@@ -4,7 +4,7 @@
     <jcr:content
         cq:designPath="/etc/designs/fd/af/default"
         cq:deviceGroups="/etc/mobile/groups/responsive"
-        cq:lastModified="{Date}2017-09-06T19:33:00.770+05:30"
+        cq:lastModified="{Date}2017-09-07T17:11:13.405+05:30"
         cq:lastModifiedBy="admin"
         cq:template="/libs/fd/af/templates/simpleEnrollmentTemplate2"
         jcr:language="en"
@@ -299,12 +299,13 @@
                             <guidepasswordbox
                                 jcr:created="{Date}2017-09-06T18:23:54.801+05:30"
                                 jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2017-09-06T18:25:12.618+05:30"
+                                jcr:lastModified="{Date}2017-09-07T15:47:10.612+05:30"
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 jcr:title="Password"
                                 sling:resourceType="fd/af/components/guidepasswordbox"
                                 dorExclusion="true"
+                                expJson="\{&quot;nodeName&quot;:&quot;RULES&quot;,&quot;items&quot;:[{&quot;script&quot;:{&quot;field&quot;:&quot;FORM.guideRootPanel.sectionTwo.password&quot;,&quot;event&quot;:&quot;Value Commit&quot;,&quot;model&quot;:{&quot;nodeName&quot;:&quot;EVENT_SCRIPTS&quot;},&quot;content&quot;:&quot;\\nvar str= this.value ; \\nvar a;\\n\\nif(str.includes(\\&quot;,\\&quot;) || str.includes(\\&quot;/\\&quot;)){\\n\\nalert(\\&quot;Invalid Password\\&quot;);\\n\\n\\n}\\n&quot;},&quot;nodeName&quot;:&quot;SCRIPTMODEL&quot;,&quot;version&quot;:1}]}"
                                 guideNodeClass="guidePasswordBox"
                                 mandatory="true"
                                 mandatoryMessage="Please enter password."
@@ -312,7 +313,8 @@
                                 placeholderText="Password"
                                 submitPassword="true"
                                 textIsRich="[true,true]"
-                                validateExpMessage="Please enter password."/>
+                                validateExpMessage="Please enter password. Do not put comma and quotes.."
+                                valueCommitScript="&#xa;try {&#xa;    eval(&quot;\\nvar str= this.value ; \\nvar a;\\n\\nif(str.includes(\\&quot;,\\&quot;) || str.includes(\\&quot;/\\&quot;)){\\n\\nalert(\\&quot;Invalid Password\\&quot;);\\n\\n\\n}\\n&quot;);&#xa;    &#xa;} catch (e) {&#xa;    /*log here */&#xa;}&#xa;"/>
                         </items>
                     </guidepanel_936167221225552>
                 </items>
