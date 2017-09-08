@@ -4,7 +4,7 @@
     <jcr:content
         cq:designPath="/etc/designs/fd/af/default"
         cq:deviceGroups="/etc/mobile/groups/responsive"
-        cq:lastModified="{Date}2017-09-07T17:11:13.405+05:30"
+        cq:lastModified="{Date}2017-09-08T15:15:26.316+05:30"
         cq:lastModifiedBy="admin"
         cq:template="/libs/fd/af/templates/simpleEnrollmentTemplate2"
         jcr:language="en"
@@ -174,13 +174,14 @@
                                 textIsRich="[true,true]"
                                 validationPatternType="none"/>
                             <guidenumericbox
-                                jcr:lastModified="{Date}2017-09-06T18:26:52.375+05:30"
+                                jcr:lastModified="{Date}2017-09-08T14:31:54.889+05:30"
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 jcr:title="Zip Code"
                                 sling:resourceType="fd/af/components/guidenumericbox"
                                 assistPriority="custom"
                                 displayPatternType="none"
+                                expJson="\{&quot;nodeName&quot;:&quot;RULES&quot;,&quot;items&quot;:[]}"
                                 guideComponentType="true"
                                 guideNodeClass="guideNumericBox"
                                 mandatory="true"
@@ -299,13 +300,13 @@
                             <guidepasswordbox
                                 jcr:created="{Date}2017-09-06T18:23:54.801+05:30"
                                 jcr:createdBy="admin"
-                                jcr:lastModified="{Date}2017-09-07T15:47:10.612+05:30"
+                                jcr:lastModified="{Date}2017-09-08T14:07:09.919+05:30"
                                 jcr:lastModifiedBy="admin"
                                 jcr:primaryType="nt:unstructured"
                                 jcr:title="Password"
                                 sling:resourceType="fd/af/components/guidepasswordbox"
                                 dorExclusion="true"
-                                expJson="\{&quot;nodeName&quot;:&quot;RULES&quot;,&quot;items&quot;:[{&quot;script&quot;:{&quot;field&quot;:&quot;FORM.guideRootPanel.sectionTwo.password&quot;,&quot;event&quot;:&quot;Value Commit&quot;,&quot;model&quot;:{&quot;nodeName&quot;:&quot;EVENT_SCRIPTS&quot;},&quot;content&quot;:&quot;\\nvar str= this.value ; \\nvar a;\\n\\nif(str.includes(\\&quot;,\\&quot;) || str.includes(\\&quot;/\\&quot;)){\\n\\nalert(\\&quot;Invalid Password\\&quot;);\\n\\n\\n}\\n&quot;},&quot;nodeName&quot;:&quot;SCRIPTMODEL&quot;,&quot;version&quot;:1}]}"
+                                expJson="\{&quot;nodeName&quot;:&quot;RULES&quot;,&quot;items&quot;:[{&quot;script&quot;:{&quot;field&quot;:&quot;FORM.guideRootPanel.sectionTwo.password&quot;,&quot;event&quot;:&quot;Validate&quot;,&quot;model&quot;:{&quot;nodeName&quot;:&quot;EVENT_SCRIPTS&quot;},&quot;content&quot;:&quot;if(! ((this.value.indexOf(\\&quot;,\\&quot;) > -1) || (this.value.indexOf('\\\\'') > -1) || (this.value.indexOf('\\&quot;')>-1) )) {\\n    this.validateExpMessage = \\&quot;Please do not enter commas\\&quot;;\\n}\\n&quot;},&quot;nodeName&quot;:&quot;SCRIPTMODEL&quot;,&quot;version&quot;:1}]}"
                                 guideNodeClass="guidePasswordBox"
                                 mandatory="true"
                                 mandatoryMessage="Please enter password."
@@ -313,8 +314,8 @@
                                 placeholderText="Password"
                                 submitPassword="true"
                                 textIsRich="[true,true]"
-                                validateExpMessage="Please enter password. Do not put comma and quotes.."
-                                valueCommitScript="&#xa;try {&#xa;    eval(&quot;\\nvar str= this.value ; \\nvar a;\\n\\nif(str.includes(\\&quot;,\\&quot;) || str.includes(\\&quot;/\\&quot;)){\\n\\nalert(\\&quot;Invalid Password\\&quot;);\\n\\n\\n}\\n&quot;);&#xa;    &#xa;} catch (e) {&#xa;    /*log here */&#xa;}&#xa;"/>
+                                validateExp="var Validate_1;&#xa;&#xa;try {&#xa;    Validate_1 = eval(&quot;if(! ((this.value.indexOf(\\&quot;,\\&quot;) > -1) || (this.value.indexOf('\\\\'') > -1) || (this.value.indexOf('\\&quot;')>-1) )) {\\n    this.validateExpMessage = \\&quot;Please do not enter commas\\&quot;;\\n}\\n&quot;);&#xa;    &#xa;} catch (e) {&#xa;    /*log here */&#xa;}&#xa;&#xa;Validate_1;"
+                                validateExpMessage="Please do not enter quotes and commas"/>
                         </items>
                     </guidepanel_936167221225552>
                 </items>
@@ -364,7 +365,9 @@
                 guideComponentType="true"
                 guideNodeClass="guideToolbar"
                 name="toolbar">
-                <items jcr:primaryType="nt:unstructured">
+                <items
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="fd/af/layouts/toolbar/mobileFixedToolbarLayout">
                     <submit
                         jcr:primaryType="nt:unstructured"
                         jcr:title="Submit"
@@ -394,6 +397,34 @@
                         guideNodeClass="guideButton"
                         name="reset"
                         type="reset"/>
+                    <nextitemnav
+                        jcr:created="{Date}2017-09-08T14:28:39.375+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2017-09-08T14:28:39.375+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Next"
+                        sling:resourceType="fd/af/components/actions/nextitemnav"
+                        clickExp="window.guideBridge.setFocus(this.panel.somExpression, 'nextItem', true)"
+                        dorExclusion="true"
+                        guideNodeClass="guideButton"
+                        name="nextitemnav1504861119605"
+                        navigationChangeExp="this.visible=this.panel.navigationContext.hasNextItem"
+                        type="moveNext"/>
+                    <previtemnav
+                        jcr:created="{Date}2017-09-08T14:29:17.322+05:30"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2017-09-08T14:29:17.322+05:30"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Back"
+                        sling:resourceType="fd/af/components/actions/previtemnav"
+                        clickExp="window.guideBridge.setFocus(this.panel.somExpression, 'prevItem')"
+                        dorExclusion="true"
+                        guideNodeClass="guideButton"
+                        name="previtemnav1504861157370"
+                        navigationChangeExp="this.visible=this.panel.navigationContext.hasPrevItem"
+                        type="movePrev"/>
                 </items>
                 <layout
                     jcr:primaryType="nt:unstructured"

@@ -2,7 +2,6 @@ package com.aem.assignment.core.services.impl;
 
 import com.aem.assignment.core.services.CreateUserInterface;
 
-import java.security.Principal;
 import javax.jcr.PropertyType;
 import javax.jcr.Session;
 import javax.jcr.Value;
